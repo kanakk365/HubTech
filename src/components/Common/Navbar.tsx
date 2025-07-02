@@ -142,9 +142,7 @@ const Navbar = () => {
           borderRadius: "2rem",
         }}
         animate={{
-          backgroundColor: isScrolled
-            ? "rgba(255, 255, 255, 0.8)"
-            : "transparent",
+          backgroundColor:"transparent",
           backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
           boxShadow: isScrolled
             ? "rgba(34, 42, 53, 0.06) 0px 0px 24px, rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(34, 42, 53, 0.04) 0px 0px 0px 1px, rgba(34, 42, 53, 0.08) 0px 0px 4px, rgba(47, 48, 55, 0.05) 0px 16px 68px, rgba(255, 255, 255, 0.1) 0px 1px 0px inset"
