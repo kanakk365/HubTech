@@ -40,8 +40,6 @@ const Contact = () => {
           <div className="flex flex-col items-center justify-center  relative overflow-hidden w-full rounded-xl p-6  ">
             {/* Centered glass card */}
             <div className="relative z-10 w-full max-w-lg rounded-3xl bg-gradient-to-r from-[#00000010] to-[#080808] backdrop-blur-sm shadow-2xl p-8 flex flex-col items-center">
-              
-              
               {/* Title */}
               <h2 className="text-2xl font-semibold text-white mb-2 text-center">
                 Get in touch with HubTech
@@ -50,7 +48,10 @@ const Contact = () => {
                 Have an inquiry? Provide your information below.
               </p>
 
-              <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col w-full gap-4"
+              >
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <input
@@ -174,12 +175,10 @@ const Contact = () => {
                 </div>
               </form>
             </div>
-
-            
           </div>
 
-          {/* Right side - Video */}
-          <div className="relative lg:h-full bg-black min-h-[400px] lg:min-h-[600px] flex items-center justify-center">
+          {/* Right side - Video (hidden on mobile) */}
+          <div className="hidden lg:flex relative lg:h-full bg-black min-h-[400px] lg:min-h-[600px] items-center justify-center">
             <div className="w-full h-full relative overflow-hidden rounded-xl lg:rounded-l-none">
               <video
                 autoPlay
