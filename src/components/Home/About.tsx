@@ -4,30 +4,36 @@ import React, { useState } from "react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const About = () => {
-  const [activeSection, setActiveSection] = useState(1); // Foundation Models is active by default
+  const [activeSection, setActiveSection] = useState<number | null>(null); // All sections active initially
 
   const sections = [
     {
       id: 0,
-      title: "Fine-Tuning and RLHF",
+      title: "AI Based Softwares",
       description:
-        "Adapt best-in-class foundation models to your business and your specific data to build sustainable, successful AI programs and data from your enterprise.",
-      image: "/static/landing-page/whole-model.webp", // You'll need to add these images
-      video: "/Vid/cube.mp4", // Using existing video as placeholder
+        "Leverage the power of AI to transform your business operations. We specialize in building intelligent systems using fine-tuned AI agents tailored to your enterprise data.",
+      detailedDescription:
+        "Whether it's predictive analytics, automation, or intelligent assistants - we turn your data into real, actionable outcomes. Our AI solutions are designed to integrate seamlessly with your existing workflows, providing immediate value while scaling with your business needs. From natural language processing to computer vision, we implement cutting-edge AI technologies that drive measurable results.",
+      image: "/static/landing-page/whole-model.webp",
+      video: "/Vid/cube.mp4",
     },
     {
       id: 1,
-      title: "Foundation Models",
+      title: "Web Development",
       description:
-        "Scale partners or integrates with all of the leading AI models, from open-source to closed-source, including OpenAI, Google, Meta, Cohere, and more.",
+        "Robust. Scalable. Secure. From dynamic web apps to full-stack enterprise solutions, our team builds digital products that perform flawlessly across devices and platforms.",
+      detailedDescription:
+        "We use the latest technologies and frameworks to ensure fast, responsive, and SEO-optimized websites that grow with your business. Our development process emphasizes clean code, performance optimization, and security best practices. Whether you need a simple landing page or a complex web application, we deliver solutions that exceed expectations and drive business growth.",
       image: "/static/landing-page/whole-model.webp",
       video: "/Vid/cube2.mp4",
     },
     {
       id: 2,
-      title: "Enterprise Data",
+      title: "UI-UX Design",
       description:
-        "Scale's Data Engine enables you to integrate your enterprise data into the fold of these models, providing the base for long-term strategic differentiation.",
+        "Designs that delight and convert. Our UI-UX experts craft user experiences that are not only visually stunning but also highly functional and intuitive.",
+      detailedDescription:
+        "We focus on user-centered design principles to boost engagement, drive retention, and create a seamless journey for every user. Our design process involves thorough research, prototyping, and testing to ensure every interface element serves a purpose. From wireframes to high-fidelity mockups, we create designs that tell your brand story while optimizing for conversions and user satisfaction.",
       image: "/static/landing-page/whole-model.webp",
       video: "/Vid/cube.mp4",
     },
@@ -35,9 +41,9 @@ const About = () => {
 
   const mobileSlides = [
     {
-      title: "Enterprise GenAI Platform",
+      title: "Our Services",
       description:
-        "The only full-stack GenAI Platform for your Enterprise, powered by the Scale Data Engine.",
+        "Comprehensive digital solutions for modern businesses, from AI-powered software to stunning user experiences.",
       image: "/static/landing-page/whole-model.webp",
       video: "/Vid/cube.mp4",
     },
@@ -59,18 +65,18 @@ const About = () => {
           <HoverBorderGradient
             containerClassName="rounded-full"
             as="div"
-            className="bg-white bg-opacity-5 text-[#D1AAD7] px-4 py-2 tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase"
+            className=" text-[#D1AAD7] px-4 py-2 tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase"
             duration={2}
           >
-            AI for the Enterprise
+            Our Services
           </HoverBorderGradient>
         </div>
         <h2 className="font-medium leading-snug text-white lg:leading-[1.25] text-2xl sm:text-3xl md:text-4xl lg:text-5xl [text-wrap:balance]">
-          Full-Stack AI Solutions
+          Digital Solutions That Drive Results
         </h2>
         <p className="mt-4 lg:mt-2 leading-[1.60] text-neutral-100 lg:text-gray-300 text-base sm:text-lg lg:text-xl [text-wrap:balance] px-4 sm:px-0">
-          Outcomes delivered with world-class data, models, agents, and
-          deployment.
+          From AI-powered software to beautiful user experiences, we deliver
+          comprehensive digital solutions for modern businesses.
         </p>
         <a
           style={{ WebkitTapHighlightColor: "transparent" }}
@@ -87,7 +93,7 @@ const About = () => {
       </div>
 
       {/* Main Content Section */}
-      <div className="max-w-7xl mx-auto mb-24 md:mb-40 xl:mb-16">
+      <div className="max-w-6xl mx-auto mb-24 md:mb-40 xl:mb-16">
         {/* Desktop Layout */}
         <div className="hidden xl:flex xl:h-[700px]">
           {/* Left side - Interactive sections */}
@@ -97,9 +103,14 @@ const About = () => {
                 <div
                   key={section.id}
                   className={`border-b group last:border-transparent border-white/10 hover:border-white hover:last:border-white hover:opacity-100 transition-all duration-300 cursor-pointer ${
-                    activeSection === section.id ? "opacity-100" : "opacity-30"
+                    activeSection === null
+                      ? "opacity-100" // All sections active initially
+                      : activeSection === section.id
+                      ? "opacity-100"
+                      : "opacity-30"
                   }`}
                   onMouseEnter={() => setActiveSection(section.id)}
+                  onMouseLeave={() => setActiveSection(null)} // Reset to show all when not hovering
                 >
                   <p className="w-full pt-6 pb-2 text-2xl leading-10 text-left text-white">
                     {section.title}
@@ -112,26 +123,39 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right side - Videos */}
-          <div className="relative w-full h-full">
-            {sections.map((section) => (
-              <div
-                key={section.id}
-                className={`w-[624px] h-[624px] absolute z-10 transition-opacity duration-300 flex justify-end items-center right-0 top-[38px] ${
-                  activeSection === section.id ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <video
-                  autoPlay
-                  playsInline
-                  loop
-                  muted
-                  className="w-full h-full object-cover rounded-lg"
-                >
-                  <source src={section.video} type="video/mp4" />
-                </video>
-              </div>
-            ))}
+          {/* Right side - Detailed Content */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            <div className="max-w-lg px-8">
+              {(() => {
+                // Determine which section to show: activeSection, or default to index 1 (Web Development)
+                const showSection = activeSection === null ? 1 : activeSection;
+                const section = sections.find((s) => s.id === showSection);
+                if (!section) return null;
+                return (
+                  <div
+                    key={section.id}
+                    className="transition-opacity duration-300 opacity-100"
+                  >
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                      <h3 className="text-2xl font-semibold text-white mb-4">
+                        {section.title}
+                      </h3>
+                      <p className="text-white/80 leading-relaxed text-lg">
+                        {section.detailedDescription}
+                      </p>
+                      <div className="mt-6 pt-6 border-t border-white/10">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                          <span className="text-purple-300 text-sm font-medium">
+                            Premium Service
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
           </div>
         </div>
 

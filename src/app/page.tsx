@@ -1,7 +1,9 @@
 
 import Navbar from "@/components/Common/Navbar";
 import About from "@/components/Home/About";
+import Contact from "@/components/Home/Contact";
 import { HeroSection } from "@/components/Home/Hero";
+import { Projects } from "@/components/Home/OurProjects";
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <About/>
+      <Projects/>
+      <Contact/>
       
       {/* Features Section */}
       <section id="features" className="py-24 bg-neutral-900">
