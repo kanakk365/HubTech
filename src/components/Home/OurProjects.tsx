@@ -141,7 +141,7 @@ export function Projects() {
             <div className="relative z-10 w-full lg:w-5/12 lg:min-w-[400px] flex flex-col h-full">
               <div className="flex-1">
                 <div className="lg:absolute w-full lg:-translate-y-1/2 lg:top-1/2">
-                  <div className="mb-6">
+                  <div className="mb-6 lg:mt-0 mt-6">
                     <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
                       {activeTabData.title}
                     </h3>
@@ -157,8 +157,8 @@ export function Projects() {
                             flex-shrink-0 px-4 py-2 rounded-lg transition-all duration-300 border
                             ${
                               activeSubTab[activeTab] === subTab.id
-                                ? "bg-gray-700/50 border-gray-600 text-white"
-                                : "bg-gray-800/30 border-gray-700/50 text-gray-300 hover:bg-gray-700/30"
+                                ? " border-gray-600 text-white"
+                                : " border-gray-700/50 text-gray-300 "
                             }
                           `}
                           style={{ boxShadow: "none" }}
