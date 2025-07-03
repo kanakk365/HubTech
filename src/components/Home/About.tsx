@@ -39,22 +39,6 @@ const About = () => {
     },
   ];
 
-  const mobileSlides = [
-    {
-      title: "Our Services",
-      description:
-        "Comprehensive digital solutions for modern businesses, from AI-powered software to stunning user experiences.",
-      image: "/static/landing-page/whole-model.webp",
-      video: "/Vid/cube.mp4",
-    },
-    ...sections.map((section) => ({
-      title: section.title,
-      description: section.description,
-      image: section.image,
-      video: section.video,
-    })),
-  ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
@@ -161,39 +145,39 @@ const About = () => {
 
         {/* Mobile Layout */}
         <div className="xl:hidden">
-          {/* Mobile Image/Video */}
-          <div className="relative mb-8 mx-auto max-w-sm">
-            <div className="aspect-square relative overflow-hidden rounded-lg">
-              <video
-                autoPlay
-                playsInline
-                loop
-                muted
-                className="w-full h-full object-cover"
-              >
-                <source
-                  src={mobileSlides[currentSlide].video}
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          </div>
-
           {/* Mobile Content */}
           <div className="px-4 sm:px-6">
-            <div className="text-center mb-8">
-              <h3 className="text-xl sm:text-2xl font-medium text-white mb-4">
-                {mobileSlides[currentSlide].title}
-              </h3>
-              <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                {mobileSlides[currentSlide].description}
-              </p>
+            {/* Current slide content */}
+            <div className="mb-8">
+              {(() => {
+                const section = sections[currentSlide];
+                if (!section) return null;
+                
+                return (
+                  <div className="backdrop-blur-sm rounded-2xl p-6 shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)]">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+                      {section.title}
+                    </h3>
+                    <p className="text-white/80 leading-relaxed text-base sm:text-lg mb-6">
+                      {section.detailedDescription}
+                    </p>
+                    <div className="pt-4 border-t border-white/10">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span className="text-purple-300 text-sm font-medium">
+                          Premium Service
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
             <div className="flex items-center justify-center mb-8">
               {/* Dots indicator */}
-              <div className="flex space-x-2 ">
-                {mobileSlides.map((_, index) => (
+              <div className="flex space-x-2">
+                {sections.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
