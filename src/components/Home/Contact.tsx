@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,25 @@ const Contact = () => {
     team: "",
     message: "",
   });
+
+  const [currentVideo, setCurrentVideo] = useState("initial"); // "initial" or "loop"
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Handle video ended event to switch to the looping video
+  const handleVideoEnded = () => {
+    if (currentVideo === "initial") {
+      setCurrentVideo("loop");
+    }
+  };
+
+  // Effect to update video source when currentVideo changes
+  useEffect(() => {
+    if (videoRef.current && currentVideo === "loop") {
+      videoRef.current.src = "/Vid/contact2.mp4";
+      videoRef.current.loop = true;
+      videoRef.current.play();
+    }
+  }, [currentVideo]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -37,9 +56,9 @@ const Contact = () => {
       <div className=" overflow-hidden backdrop-blur-sm bg-white/1 relative">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 relative z-10">
           {/* Left side - Form */}
-          <div className="  flex flex-col items-center justify-center  relative overflow-hidden w-full rounded-xl p-6  ">
+          <div className="flex flex-col items-center justify-center  relative overflow-hidden w-full rounded-xl p-6  ">
             {/* Centered glass card */}
-            <div className="relative z-10 w-full max-w-lg rounded-3xl shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)]  backdrop-blur-sm  py-4 lg:py-8 lg:p-8 px-4 flex flex-col items-center">
+            <div className="relative z-10 w-full max-w-lg rounded-3xl  backdrop-blur-sm shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)] py-4 lg:py-8 lg:p-8 px-4 flex flex-col items-center">
               {/* Title */}
               <h2 className="text-2xl font-semibold text-white mb-2 text-center">
                 Get in touch with HubTech
@@ -181,13 +200,18 @@ const Contact = () => {
           <div className="hidden lg:flex relative lg:h-full bg-black min-h-[400px] lg:min-h-[600px] items-center justify-center">
             <div className="w-full h-full relative overflow-hidden rounded-xl lg:rounded-l-none">
               <video
+                ref={videoRef}
                 autoPlay
-                loop
+                loop={currentVideo === "loop"}
                 muted
                 playsInline
-                className="w-[50rem] h-[50rem] mt-10 object-cover"
+                onEnded={handleVideoEnded}
+                className="w-[40rem] h-[40rem] mt-10 object-cover"
               >
-                <source src="/Vid/contact.webm" type="video/webm" />
+                <source 
+                  src={currentVideo === "initial" ? "/Vid/contact.webm" : "/Vid/contact2.mp4"} 
+                  type={currentVideo === "initial" ? "video/webm" : "video/mp4"} 
+                />
                 Your browser does not support the video tag.
               </video>
             </div>
