@@ -39,7 +39,7 @@ const Contact = () => {
           {/* Left side - Form */}
           <div className="flex flex-col items-center justify-center  relative overflow-hidden w-full rounded-xl p-6  ">
             {/* Centered glass card */}
-            <div className="relative z-10 w-full max-w-lg rounded-3xl bg-gradient-to-r from-[#00000010] to-[#080808] backdrop-blur-sm shadow-2xl lg:p-8 px-4 flex flex-col items-center">
+            <div className="relative z-10 w-full max-w-lg rounded-3xl bg-gradient-to-r from-[#00000010] to-[#080808] backdrop-blur-sm shadow-2xl py-4 lg:py-8 lg:p-8 px-4 flex flex-col items-center">
               {/* Title */}
               <h2 className="text-2xl font-semibold text-white mb-2 text-center">
                 Get in touch with HubTech
