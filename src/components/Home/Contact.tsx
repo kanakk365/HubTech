@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-4 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-20 pt-0 px-4 lg:px-8 max-w-7xl mx-auto">
       <div className=" overflow-hidden backdrop-blur-sm bg-white/1 relative">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 relative z-10">
           {/* Left side - Form */}

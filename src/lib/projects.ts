@@ -92,8 +92,7 @@ export const tabsData: TabData[] = [
             color: "bg-green-400",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Tournament+Arena+View",
+        imageUrl: "/static/landing-page/projects/battle-lounge-1.jpg",
       },
       {
         id: "management",
@@ -147,8 +146,7 @@ export const tabsData: TabData[] = [
             color: "bg-green-500",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Tournament+Management+Dashboard",
+        imageUrl: "/static/landing-page/projects/battle-lounge-2.jpg",
       },
       {
         id: "dashboard",
@@ -202,8 +200,7 @@ export const tabsData: TabData[] = [
             color: "bg-green-500",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Player+Gaming+Dashboard",
+        imageUrl: "/static/landing-page/projects/battle-lounge-3.jpg",
       },
     ],
   },
@@ -268,8 +265,7 @@ export const tabsData: TabData[] = [
             color: "bg-green-400",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Live+Streaming+Control+Room",
+        imageUrl: "/static/landing-page/projects/ysn-streaming.jpeg",
       },
       {
         id: "interactive",
@@ -323,8 +319,7 @@ export const tabsData: TabData[] = [
             color: "bg-yellow-400",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Interactive+Viewer+Dashboard",
+        imageUrl: "/static/landing-page/projects/ysn-live-interface.jpeg",
       },
       {
         id: "teammanagement",
@@ -378,8 +373,7 @@ export const tabsData: TabData[] = [
             color: "bg-yellow-400",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Team+Management+Console",
+        imageUrl: "/static/landing-page/projects/ysn-team-dashboard.jpeg",
       },
     ],
   },
@@ -399,7 +393,7 @@ export const tabsData: TabData[] = [
           "Breaks down form and technique using video data and pro benchmarks. Advanced computer vision technology analyzes every movement for optimal performance.",
         stats: [],
         tableData: [],
-        imageUrl: "",
+        imageUrl: "/static/landing-page/projects/connected-athlete.webp",
       },
       {
         id: "injury-risk-detection",
@@ -408,7 +402,7 @@ export const tabsData: TabData[] = [
           "Spots inefficiencies and flags physical issues before they become injuries. Proactive identification of potential problems through movement pattern analysis.",
         stats: [],
         tableData: [],
-        imageUrl: "",
+        imageUrl: "/static/landing-page/projects/connected-athlete-dashboard.png",
       },
       {
         id: "integrated-recovery-loop",
@@ -417,7 +411,7 @@ export const tabsData: TabData[] = [
           "Syncs with physical therapists and health systems to deliver personalized improvement plans. Seamless data sharing for comprehensive athlete care.",
         stats: [],
         tableData: [],
-        imageUrl: "",
+        imageUrl: "/static/landing-page/projects/connected-athlete-profile.png",
       },
     ],
   },
@@ -482,8 +476,7 @@ export const tabsData: TabData[] = [
             color: "bg-yellow-400",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Athlete+Profile+Dashboard",
+        imageUrl: "/static/landing-page/projects/playhub-profile-and-status-2.jpg",
       },
       {
         id: "events",
@@ -537,8 +530,7 @@ export const tabsData: TabData[] = [
             color: "bg-green-500",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Event+Registration+Portal",
+        imageUrl: "/static/landing-page/projects/playhub-2.jpg",
       },
       {
         id: "recruitment",
@@ -592,8 +584,7 @@ export const tabsData: TabData[] = [
             color: "bg-green-500",
           },
         ],
-        imageUrl:
-          "/placeholder.svg?height=400&width=600&text=Recruitment+Hub+Dashboard",
+        imageUrl: "/static/landing-page/projects/playerhub-analytics.png",
       },
     ],
   },

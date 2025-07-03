@@ -91,7 +91,7 @@ const Navbar = () => {
 
   const ActionButtons = () => (
     <div className="flex items-center gap-4">
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         className="hidden md:block"
@@ -102,7 +102,7 @@ const Navbar = () => {
         >
           Login
         </Link>
-      </motion.div>
+      </motion.div> */}
       <button
         className="px-3 py-2 rounded-md bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-out text-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] hidden md:block hover:scale-105 hover:shadow-[0_0_32px_rgba(34,_42,_53,_0.12),_0_2px_4px_rgba(0,_0,_0,_0.1),_0_0_0_1px_rgba(34,_42,_53,_0.08),_0_0_8px_rgba(34,_42,_53,_0.16),_0_24px_80px_rgba(47,_48,_55,_0.1),_0_2px_0_rgba(255,_255,_255,_0.15)_inset] hover:bg-gray-100"
         data-cal-namespace="chat-with-hubtech"
@@ -184,13 +184,13 @@ const Navbar = () => {
           Contact
         </Link>
         <div className="border-t border-gray-700 pt-4 space-y-3">
-          <Link
+          {/* <Link
             href="/login"
             className="block text-center px-4 py-3 text-white font-medium hover:bg-gray-800 rounded-lg transition-all duration-200"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Login
-          </Link>
+          </Link> */}
           <button
             className="w-full px-4 py-3 rounded-lg bg-white text-black text-sm font-bold hover:bg-gray-200 transition-all duration-200 shadow-md"
             data-cal-namespace="chat-with-hubtech"

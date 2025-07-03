@@ -2,7 +2,8 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+
+import { InteractiveHoverButton } from "../ui/interactive-hover-button";
 
 
 
@@ -102,26 +103,11 @@ export function HeroSection() {
                 </p>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="px-5 text-base bg-white text-black hover:bg-neutral-200"
-                  >
-                    <Link href="#link">
-                      <span className="text-nowrap">Start Building</span>
-                    </Link>
-                  </Button>
-                  <Button
-                    key={2}
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="px-5 text-base border-white text-white hover:bg-white hover:text-black"
-                  >
-                    <Link href="#link">
-                      <span className="text-nowrap">Request a demo</span>
-                    </Link>
-                  </Button>
+                  <Link href="#link">
+                    <InteractiveHoverButton>Book a call</InteractiveHoverButton>
+                      
+                    
+                  </Link>
                 </div>
               </div>
               {/* Right: Video Cube */}

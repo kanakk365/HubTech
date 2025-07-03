@@ -78,7 +78,7 @@ const About = () => {
           From AI-powered software to beautiful user experiences, we deliver
           comprehensive digital solutions for modern businesses.
         </p>
-        <a
+        {/* <a
           style={{ WebkitTapHighlightColor: "transparent" }}
           className="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block mt-8"
           href="/demo"
@@ -89,15 +89,15 @@ const About = () => {
               →
             </span>
           </div>
-        </a>
+        </a> */}
       </div>
 
       {/* Main Content Section */}
-      <div className="max-w-6xl mx-auto mb-24 md:mb-40 xl:mb-16">
+      <div className=" max-w-6xl mx-auto mb-24 md:mb-40 xl:mb-16">
         {/* Desktop Layout */}
         <div className="hidden xl:flex xl:h-[700px]">
           {/* Left side - Interactive sections */}
-          <div className="relative z-10 w-6/12 min-w-[510px] -mr-9">
+          <div className="relative z-10 w-6/12 min-w-[510px] ">
             <div className="absolute w-full -translate-y-1/2 top-1/2">
               {sections.map((section) => (
                 <div
@@ -124,7 +124,7 @@ const About = () => {
           </div>
 
           {/* Right side - Detailed Content */}
-          <div className="relative w-full h-full flex items-center justify-center">
+          <div className="  relative w-full h-full flex items-center justify-end">
             <div className="max-w-lg px-8">
               {(() => {
                 // Determine which section to show: activeSection, or default to index 1 (Web Development)
@@ -136,7 +136,7 @@ const About = () => {
                     key={section.id}
                     className="transition-opacity duration-300 opacity-100"
                   >
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <div className=" backdrop-blur-sm rounded-2xl p-8 shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)]">
                       <h3 className="text-2xl font-semibold text-white mb-4">
                         {section.title}
                       </h3>

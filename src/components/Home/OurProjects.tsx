@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   Coins,
   Zap,
@@ -57,7 +58,7 @@ export function Projects() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-4">
+    <div className="min-h-screen bg-black text-white py-10 pb-0 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -97,7 +98,7 @@ export function Projects() {
               >
                 {activeTab === tab.id && (
                   <ShineBorder
-                    shineColor={["#ffffff"]}
+                    shineColor={["#d9d9d9"]}
                     borderWidth={1}
                     duration={14}
                     className="rounded-xl"
@@ -135,7 +136,7 @@ export function Projects() {
           </div>
 
           {/* Main Content Section */}
-          <div className=" text-left max-w-5xl mx-auto flex flex-col lg:flex-row xl:h-[700px] gap-8 rounded-2xl">
+          <div className=" text-left max-w-5xl mx-auto flex flex-col lg:flex-row xl:h-[700px] gap-10 rounded-2xl">
             {/* Left side - Sub-tabs Navigation */}
             <div className="relative z-10 w-full lg:w-5/12 lg:min-w-[400px] flex flex-col h-full">
               <div className="flex-1">
@@ -201,15 +202,25 @@ export function Projects() {
                   </div>
                 </div>
               </div>
-              {/* Empty div to match right side height */}
-              <div className="h-32 lg:h-48"></div>
+              
             </div>
 
             {/* Right side - Dashboard Content */}
-            <div className="relative w-full lg:w-7/12 h-full">
-              <div className="w-full h-full flex justify-center lg:justify-end items-start">
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-gray-700/50 w-full max-w-2xl transition-all duration-500 flex items-center justify-center">
-                  {/* Image will be added here later */}
+            <div className="relative w-full lg:w-7/12 h-full ">
+              <div className="w-full h-full flex justify-center lg:justify-end items-center">
+                <div className="backdrop-blur-sm rounded-xl p-4 lg:p-2 shadow-[0_-2px_4px_rgba(255,255,255,0.1),0_-8px_16px_rgba(255,255,255,0.05),0_-16px_32px_rgba(255,255,255,0.02)] w-full max-w-2xl transition-all duration-500 flex items-center justify-center overflow-hidden">
+                  {activeSubTabData.imageUrl && (
+                    <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px]">
+                      <Image
+                        src={activeSubTabData.imageUrl}
+                        alt={`${activeSubTabData.label} - ${activeTabData.title}`}
+                        fill
+                        className="object-cover rounded-xl"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
