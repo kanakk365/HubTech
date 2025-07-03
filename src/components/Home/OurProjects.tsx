@@ -58,7 +58,7 @@ export function Projects() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-10 pb-0 px-4">
+    <div id="projects" className="min-h-screen bg-black text-white py-10 pb-0 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

@@ -52,7 +52,7 @@ const Contact = () => {
   };
 
   return (
-    <section className=" lg:px-8 max-w-7xl mx-auto">
+    <section id="contact" className=" lg:px-8 max-w-7xl mx-auto">
       <div className=" overflow-hidden backdrop-blur-sm bg-white/1 relative">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 relative z-10">
           {/* Left side - Form */}

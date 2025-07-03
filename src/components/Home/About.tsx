@@ -42,7 +42,7 @@ const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div id="about" className="px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="flex flex-col max-w-3xl mx-auto items-center justify-center text-center md:mb-20 md:mt-12 mb-16">
         <div className="mb-5 lg:mb-5">

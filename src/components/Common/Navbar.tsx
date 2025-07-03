@@ -66,23 +66,37 @@ const Navbar = () => {
     </Link>
   );
 
+  // Smooth scroll handler for hash links
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (hash.startsWith('#')) {
+      e.preventDefault();
+      const el = document.getElementById(hash.substring(1));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const NavLinks = () => (
     <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-300 font-medium hover:text-zinc-100 transition duration-300">
       <Link
-        href="/#features"
+        href="/#about"
         className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        onClick={e => handleSmoothScroll(e, '#about')}
       >
-        <span className="relative z-20">Features</span>
+        <span className="relative z-20">About</span>
       </Link>
       <Link
-        href="/#pricing"
+        href="/#projects"
         className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        onClick={e => handleSmoothScroll(e, '#projects')}
       >
-        <span className="relative z-20">Pricing</span>
+        <span className="relative z-20">Projects</span>
       </Link>
       <Link
         href="/#contact"
         className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
+        onClick={e => handleSmoothScroll(e, '#contact')}
       >
         <span className="relative z-20">Contact</span>
       </Link>
@@ -163,23 +177,23 @@ const Navbar = () => {
     >
       <div className="flex flex-col p-4 space-y-4">
         <Link
-          href="/#features"
+          href="/#about"
           className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800 rounded-lg transition-all duration-200"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={e => { handleSmoothScroll(e, '#about'); setIsMobileMenuOpen(false); }}
         >
-          Features
+          About
         </Link>
         <Link
-          href="/#pricing"
+          href="/#projects"
           className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800 rounded-lg transition-all duration-200"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={e => { handleSmoothScroll(e, '#projects'); setIsMobileMenuOpen(false); }}
         >
-          Pricing
+          Projects
         </Link>
         <Link
           href="/#contact"
           className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800 rounded-lg transition-all duration-200"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={e => { handleSmoothScroll(e, '#contact'); setIsMobileMenuOpen(false); }}
         >
           Contact
         </Link>
