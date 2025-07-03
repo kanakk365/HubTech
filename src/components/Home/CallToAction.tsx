@@ -4,7 +4,7 @@ import { BackgroundPaths } from "@/components/ui/background-paths";
 
 export default function CallToAction() {
     return (
-        <section className="w-full relative">
+        <section className="w-full relative mt-10 ">
             {/* Option 1: Using BackgroundPaths directly */}
             <BackgroundPaths title="Ready to Transform Your Business?" />
             

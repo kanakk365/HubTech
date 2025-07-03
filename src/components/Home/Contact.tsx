@@ -33,13 +33,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 pt-0 px-4 lg:px-8 max-w-7xl mx-auto">
+    <section className=" lg:px-8 max-w-7xl mx-auto">
       <div className=" overflow-hidden backdrop-blur-sm bg-white/1 relative">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 relative z-10">
           {/* Left side - Form */}
           <div className="flex flex-col items-center justify-center  relative overflow-hidden w-full rounded-xl p-6  ">
             {/* Centered glass card */}
-            <div className="relative z-10 w-full max-w-lg rounded-3xl bg-gradient-to-r from-[#00000010] to-[#080808] backdrop-blur-sm shadow-2xl p-8 flex flex-col items-center">
+            <div className="relative z-10 w-full max-w-lg rounded-3xl bg-gradient-to-r from-[#00000010] to-[#080808] backdrop-blur-sm shadow-2xl lg:p-8 px-4 flex flex-col items-center">
               {/* Title */}
               <h2 className="text-2xl font-semibold text-white mb-2 text-center">
                 Get in touch with HubTech
