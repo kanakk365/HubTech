@@ -5,7 +5,7 @@ import CallToAction from "@/components/Home/CallToAction";
 import { HeroSection } from "@/components/Home/Hero";
 import { Projects } from "@/components/Home/OurProjects";
 import Footer from "@/components/Common/Footer";
-import WaveAnimation from "@/components/Home/Wave";
+import { Cta } from "@/components/Home/Cta";
 
 export default function Home() {
   return (
@@ -15,9 +15,8 @@ export default function Home() {
       <About />
       <Projects />
       <Contact />
-      <CallToAction />
+      <Cta/>
       <Footer />
-      <WaveAnimation/>
     </div>
   );
 }
