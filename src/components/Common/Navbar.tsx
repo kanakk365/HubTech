@@ -253,11 +253,11 @@ const Navbar = () => {
           willChange: "auto",
         }}
         animate={{
-          backgroundColor: "transparent",
-          backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
+          backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.1)",
+          backdropFilter: isScrolled ? "blur(20px)" : "blur(5px)",
           boxShadow: isScrolled
-            ? "rgba(34, 42, 53, 0.12) 0px 0px 24px, rgba(0, 0, 0, 0.10) 0px 1px 1px, rgba(34, 42, 53, 0.16) 0px 0px 4px, rgba(47, 48, 55, 0.10) 0px 16px 68px, rgba(255, 255, 255, 0.15) 0px 1px 0px inset, rgba(34, 42, 53, 0.5) 0px 0px 0px 1px"
-            : "rgba(34, 42, 53, 0.12) 0px 0px 0px, rgba(0, 0, 0, 0.10) 0px 0px 0px, rgba(34, 42, 53, 0.16) 0px 0px 0px, rgba(47, 48, 55, 0.10) 0px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px inset, rgba(34, 42, 53, 0.15) 0px 0px 0px 1px",
+            ? "rgba(0, 0, 0, 0.3) 0px 8px 32px, rgba(0, 0, 0, 0.2) 0px 4px 16px, rgba(34, 42, 53, 0.25) 0px 2px 8px, rgba(47, 48, 55, 0.2) 0px 32px 120px, rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(34, 42, 53, 0.7) 0px 0px 0px 1px"
+            : "rgba(0, 0, 0, 0.15) 0px 4px 16px, rgba(0, 0, 0, 0.08) 0px 2px 8px, rgba(34, 42, 53, 0.12) 0px 1px 4px, rgba(47, 48, 55, 0.08) 0px 8px 32px, rgba(255, 255, 255, 0.1) 0px 1px 0px inset, rgba(34, 42, 53, 0.2) 0px 0px 0px 1px",
           transform: isScrolled ? "translateY(20px)" : "none",
           width: isScrolled ? "40%" : "100%",
         }}
@@ -279,11 +279,11 @@ const Navbar = () => {
           borderRadius: "2rem",
         }}
         animate={{
-          backgroundColor: "transparent",
-          backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
+          backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0.15)",
+          backdropFilter: isScrolled ? "blur(20px)" : "blur(8px)",
           boxShadow: isScrolled
-            ? "rgba(34, 42, 53, 0.06) 0px 0px 24px, rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(34, 42, 53, 0.04) 0px 0px 0px 1px, rgba(34, 42, 53, 0.08) 0px 0px 4px, rgba(47, 48, 55, 0.05) 0px 16px 68px, rgba(255, 255, 255, 0.1) 0px 1px 0px inset"
-            : "rgba(34, 42, 53, 0.06) 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px, rgba(34, 42, 53, 0.04) 0px 0px 0px 0px, rgba(34, 42, 53, 0.08) 0px 0px 0px, rgba(47, 48, 55, 0.05) 0px 0px 0px, rgba(255, 255, 255, 0.1) 0px 0px 0px inset",
+            ? "rgba(0, 0, 0, 0.4) 0px 8px 32px, rgba(0, 0, 0, 0.25) 0px 4px 16px, rgba(34, 42, 53, 0.3) 0px 2px 8px, rgba(47, 48, 55, 0.25) 0px 24px 80px, rgba(255, 255, 255, 0.15) 0px 1px 0px inset, rgba(34, 42, 53, 0.6) 0px 0px 0px 1px"
+            : "rgba(0, 0, 0, 0.2) 0px 4px 16px, rgba(0, 0, 0, 0.1) 0px 2px 8px, rgba(34, 42, 53, 0.15) 0px 1px 4px, rgba(47, 48, 55, 0.1) 0px 8px 32px, rgba(255, 255, 255, 0.1) 0px 1px 0px inset, rgba(34, 42, 53, 0.25) 0px 0px 0px 1px",
           width: isScrolled ? "90%" : "100%",
           paddingRight: isScrolled ? "12px" : "0px",
           paddingLeft: isScrolled ? "12px" : "0px",
