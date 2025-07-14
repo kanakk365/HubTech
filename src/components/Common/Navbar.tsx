@@ -32,30 +32,31 @@ const Navbar = () => {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isMobileMenuOpen && !(event.target as Element).closest('.mobile-menu-container')) {
+      if (
+        isMobileMenuOpen &&
+        !(event.target as Element).closest(".mobile-menu-container")
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMobileMenuOpen]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     // Cleanup on unmount
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
-
-  
 
   const Logo = () => (
     <Link
@@ -67,12 +68,15 @@ const Navbar = () => {
   );
 
   // Smooth scroll handler for hash links
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
-    if (hash.startsWith('#')) {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    hash: string
+  ) => {
+    if (hash.startsWith("#")) {
       e.preventDefault();
       const el = document.getElementById(hash.substring(1));
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        el.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -82,21 +86,21 @@ const Navbar = () => {
       <Link
         href="/#about"
         className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
-        onClick={e => handleSmoothScroll(e, '#about')}
+        onClick={(e) => handleSmoothScroll(e, "#about")}
       >
         <span className="relative z-20">About</span>
       </Link>
       <Link
         href="/#projects"
         className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
-        onClick={e => handleSmoothScroll(e, '#projects')}
+        onClick={(e) => handleSmoothScroll(e, "#projects")}
       >
         <span className="relative z-20">Projects</span>
       </Link>
       <Link
         href="/#contact"
         className="text-neutral-300 relative px-4 py-2 hover:text-neutral-100 transition-all duration-300 ease-out hover:scale-105"
-        onClick={e => handleSmoothScroll(e, '#contact')}
+        onClick={(e) => handleSmoothScroll(e, "#contact")}
       >
         <span className="relative z-20">Contact</span>
       </Link>
@@ -145,7 +149,7 @@ const Navbar = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
         className={`tabler-icon text-white transition-transform duration-200 ${
-          isMobileMenuOpen ? 'rotate-90' : ''
+          isMobileMenuOpen ? "rotate-90" : ""
         }`}
       >
         {isMobileMenuOpen ? (
@@ -167,10 +171,10 @@ const Navbar = () => {
   const MobileMenu = () => (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
-      animate={{ 
-        opacity: isMobileMenuOpen ? 1 : 0, 
+      animate={{
+        opacity: isMobileMenuOpen ? 1 : 0,
         y: isMobileMenuOpen ? 0 : -20,
-        display: isMobileMenuOpen ? 'block' : 'none'
+        display: isMobileMenuOpen ? "block" : "none",
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="absolute top-full left-0 right-0 mt-2 bg-black rounded-2xl shadow-lg border border-gray-800 overflow-hidden mobile-menu-container"
@@ -179,21 +183,30 @@ const Navbar = () => {
         <Link
           href="/#about"
           className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800 rounded-lg transition-all duration-200"
-          onClick={e => { handleSmoothScroll(e, '#about'); setIsMobileMenuOpen(false); }}
+          onClick={(e) => {
+            handleSmoothScroll(e, "#about");
+            setIsMobileMenuOpen(false);
+          }}
         >
           About
         </Link>
         <Link
           href="/#projects"
           className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800 rounded-lg transition-all duration-200"
-          onClick={e => { handleSmoothScroll(e, '#projects'); setIsMobileMenuOpen(false); }}
+          onClick={(e) => {
+            handleSmoothScroll(e, "#projects");
+            setIsMobileMenuOpen(false);
+          }}
         >
           Projects
         </Link>
         <Link
           href="/#contact"
           className="text-neutral-300 px-4 py-3 hover:text-neutral-100 hover:bg-gray-800 rounded-lg transition-all duration-200"
-          onClick={e => { handleSmoothScroll(e, '#contact'); setIsMobileMenuOpen(false); }}
+          onClick={(e) => {
+            handleSmoothScroll(e, "#contact");
+            setIsMobileMenuOpen(false);
+          }}
         >
           Contact
         </Link>
@@ -243,8 +256,8 @@ const Navbar = () => {
           backgroundColor: "transparent",
           backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
           boxShadow: isScrolled
-            ? "rgba(34, 42, 53, 0.12) 0px 0px 24px, rgba(0, 0, 0, 0.10) 0px 1px 1px, rgba(34, 42, 53, 0.08) 0px 0px 0px 1px, rgba(34, 42, 53, 0.16) 0px 0px 4px, rgba(47, 48, 55, 0.10) 0px 16px 68px, rgba(255, 255, 255, 0.15) 0px 1px 0px inset"
-            : "rgba(34, 42, 53, 0.12) 0px 0px 0px, rgba(0, 0, 0, 0.10) 0px 0px 0px, rgba(34, 42, 53, 0.08) 0px 0px 0px 0px, rgba(34, 42, 53, 0.16) 0px 0px 0px, rgba(47, 48, 55, 0.10) 0px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px inset",
+            ? "rgba(34, 42, 53, 0.12) 0px 0px 24px, rgba(0, 0, 0, 0.10) 0px 1px 1px, rgba(34, 42, 53, 0.16) 0px 0px 4px, rgba(47, 48, 55, 0.10) 0px 16px 68px, rgba(255, 255, 255, 0.15) 0px 1px 0px inset, rgba(34, 42, 53, 0.5) 0px 0px 0px 1px"
+            : "rgba(34, 42, 53, 0.12) 0px 0px 0px, rgba(0, 0, 0, 0.10) 0px 0px 0px, rgba(34, 42, 53, 0.16) 0px 0px 0px, rgba(47, 48, 55, 0.10) 0px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px inset, rgba(34, 42, 53, 0.15) 0px 0px 0px 1px",
           transform: isScrolled ? "translateY(20px)" : "none",
           width: isScrolled ? "40%" : "100%",
         }}
@@ -266,7 +279,7 @@ const Navbar = () => {
           borderRadius: "2rem",
         }}
         animate={{
-          backgroundColor:"transparent",
+          backgroundColor: "transparent",
           backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
           boxShadow: isScrolled
             ? "rgba(34, 42, 53, 0.06) 0px 0px 24px, rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(34, 42, 53, 0.04) 0px 0px 0px 1px, rgba(34, 42, 53, 0.08) 0px 0px 4px, rgba(47, 48, 55, 0.05) 0px 16px 68px, rgba(255, 255, 255, 0.1) 0px 1px 0px inset"

@@ -88,7 +88,7 @@ export function Projects() {
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
                 className={`
-                relative flex items-center gap-3 px-4 sm:px-6 py-4 rounded-xl transition-all duration-500 ease-out
+                relative flex items-center gap-3 px-4 sm:px-6 py-4 rounded-xl transition-all duration-500 ease-out min-w-0
                 ${
                   activeTab === tab.id
                     ? "flex-[2] "
@@ -117,14 +117,14 @@ export function Projects() {
                     return Icon ? <Icon className="w-6 h-6" /> : null;
                   })()}
                 </div>
-                <div className="flex flex-col items-start">
+                <div className="flex flex-col items-start min-w-0 flex-1">
                   <span
                     className={`
-                    font-semibold transition-all duration-300
+                    font-semibold transition-all duration-300 whitespace-nowrap
                     ${
                       activeTab === tab.id
                         ? "text-white text-lg"
-                        : "text-gray-300"
+                        : "text-gray-300 text-sm"
                     }
                   `}
                   >
