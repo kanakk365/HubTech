@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/Home/Hero";
 import { Projects } from "@/components/Home/OurProjects";
 import Footer from "@/components/Common/Footer";
 import { Cta } from "@/components/Home/Cta";
+import { JoinUs } from "@/components/Home/JoinUs";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Projects />
       <Contact />
       <Cta/>
+      <JoinUs />
       <Footer />
     </div>
   );
