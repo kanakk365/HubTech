@@ -130,8 +130,7 @@ const N = ({ x, y, w, h, icon, label, sub, delay = 0, round }: NodeDef) => (
   </foreignObject>
 );
 
-/* ─── Central Hub (CPU-style box with pins) ────────────── */
-const Hub = ({ x, y, w = 140, h = 60, label, sub, fid, icon }: { x: number; y: number; w?: number; h?: number; label: string; sub?: string; fid: string; icon?: React.ReactNode }) => (
+const Hub = ({ x, y, w = 140, h = 60, label, sub, icon }: { x: number; y: number; w?: number; h?: number; label: string; sub?: string; fid: string; icon?: React.ReactNode }) => (
   <foreignObject x={x - 10} y={y - 10} width={w + 20} height={h + 20}>
     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.3 }}
@@ -311,10 +310,10 @@ export const ServicesSection = () => {
                 return (
                   <button key={s.id} onClick={() => setActiveTab(s.id)}
                     className={`relative w-full flex flex-col text-left py-6 px-8 transition-all duration-300 group outline-none ${active ? "" : "hover:bg-white/[0.02]"}`}>
-                    {active && <motion.div layoutId="activeBg" className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-purple-500/5 to-transparent rounded-r-xl pointer-events-none" />}
-                    {active && <motion.div layoutId="activeTabIndicator" className="absolute left-[-1px] top-0 bottom-0 w-[3px] bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.7)]" transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} />}
+                    {active && <motion.div layoutId="activeBg" className="absolute inset-0 rounded-r-xl pointer-events-none" style={{ background: "linear-gradient(to right, rgba(209,170,215,0.12), rgba(209,170,215,0.05), transparent)" }} />}
+                    {active && <motion.div layoutId="activeTabIndicator" className="absolute left-[-1px] top-0 bottom-0 w-[3px]" style={{ backgroundColor: "#D1AAD7", boxShadow: "0 0 15px rgba(209,170,215,0.7)" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} />}
                     <h3 className={`relative z-10 font-medium text-xl mb-2 transition-colors duration-300 ${active ? "text-white" : "text-slate-400 group-hover:text-slate-200"}`}>{s.title}</h3>
-                    <p className={`relative z-10 text-sm leading-relaxed transition-colors duration-300 ${active ? "text-purple-100/70" : "text-slate-600 group-hover:text-slate-500"}`}>{s.description}</p>
+                    <p className={`relative z-10 text-sm leading-relaxed transition-colors duration-300 ${active ? "text-[#D1AAD7]/70" : "text-slate-600 group-hover:text-slate-500"}`}>{s.description}</p>
                   </button>
                 );
               })}
