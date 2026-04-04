@@ -13,12 +13,12 @@ export const JoinUs = () => {
       <StarsBackground className="opacity-80 z-0" starCount={200} />
 
       <div className="relative z-20 w-full max-w-6xl px-4 md:px-8">
-        <div className="relative flex flex-col items-center justify-center rounded-2xl bg-black px-6 py-20 text-center border-none shadow-2xl">
+        <div className="relative flex flex-col items-center justify-center rounded-2xl bg-black px-6 py-10 text-center border-none shadow-2xl">
           
           <ShineBorder 
             className="rounded-2xl"
-            shineColor={["#00e699", "#0077ff", "#00e699"]}
-            borderWidth={2}
+            shineColor={["#ffffff", "#e2e8f0", "#ffffff"]}
+            borderWidth={1}
             duration={25}
           />
           
