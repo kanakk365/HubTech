@@ -132,9 +132,19 @@ export const ProductsScrollSection = () => {
       className="relative bg-black w-full"
     >
       {/* Intro Header Before Stack (Optional, adds nice transition) */}
-      <div className="w-full text-center py-20 bg-black text-white relative z-10">
-        <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-4">Our Products.</h2>
-        <p className="text-slate-400 text-lg">Designed for efficiency, scalability, and agility.</p>
+      <div className="w-full text-center py-10 bg-black text-white relative z-10">
+        <div className="flex flex-col items-center justify-center gap-2 ">
+          <div>
+            <span className="text-gray-500 text-lg">{"("}</span>
+            <span className="text-lg text-gray-300">
+              Efficiency, Scalability, and Agility
+            </span>
+            <span className="text-gray-500 text-lg">{")"}</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+            <span className="text-white">Our Products</span>
+          </h2>
+        </div>
       </div>
 
       {/* The Stack */}
