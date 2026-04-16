@@ -62,20 +62,21 @@ export function HeroSection() {
     <>
       <main className="overflow-hidden">
         <section className="relative">
-          {/* Floor Background Image */}
-          {/* <Image
-            alt="Floor background"
-            src="/static/landing-page/bg-hero-1.webp"
-            width={1920}
-            height={1080}
-            priority
-            className=" pointer-events-none absolute top-10 left-0 right-0 mx-auto hidden h-screen w-full select-none md:block opacity-80 transition-opacity duration-500"
+          {/* Bottom fade — seamless transition to next section */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-48 z-20 pointer-events-none"
             style={{
-              color: 'transparent',
-              maskImage: 'linear-gradient(to top, transparent 15%, black 25%)',
-              maskComposite: 'exclude'
+              background: "linear-gradient(to top, #020202 10%, transparent)",
             }}
-          /> */}
+          />
+          {/* Premium Blur Transition */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-32 z-[21] pointer-events-none backdrop-blur-md"
+            style={{
+              maskImage: "linear-gradient(to bottom, transparent, black 70%)",
+              WebkitMaskImage: "linear-gradient(to bottom, transparent, black 70%)",
+            }}
+          />
           {/* Light Ray Background */}
           <Image
             alt="Light ray background"
